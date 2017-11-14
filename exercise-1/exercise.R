@@ -1,16 +1,11 @@
 # Exercise 1: Loading functions
 library(ggplot2)
 # Set your directory
+setwd("~/Desktop/INFO 201/ch16-shiny/exercise-1")
 
 
 # Source your BuildScatter.r script, exposing your BuildScatter function
-
+source('./scripts/BuildScatter.R')
 
 # Use your BuildScatter function to draw a well labeled ggplot scatterplot of the iris data
-BuildScatter <- function(df) {
-scatter <- ggplot(data = df) +
-  geom_point(mapping = aes(x = displ, y = hwy, color = class))
-return(scatter)
-}
-
-scatter <- BuildScatter(mpg)
+BuildScatter(mpg, mpg$displ, mpg$hwy, mpg$class)
