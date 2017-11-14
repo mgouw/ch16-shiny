@@ -1,5 +1,11 @@
 # Function to build a scatterplot
-
+BuildScatter <- function(df, my_x, my_y, my_color) {
+  scatterplot <- ggplot(data = df) +
+    geom_point(mapping = aes(x = my_x, y = my_y, color = my_color)) +
+    labs(title = "Title", x = "X Title", y = "Y Title")
+  return(scatterplot)
+}
+BuildScatter(mpg, mpg$displ, mpg$hwy, mpg$class)
 # Write a function that returns a scatterplot, parameterizing the following variables:
 #   - Data to use
 #   - Variable for the x axis
